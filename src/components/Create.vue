@@ -1,5 +1,5 @@
 <template lang="pug">
-.create This is a client side script, using Amazon's SDK.  None of your information (particularily keys and passwords) are sent to us.
+.create This app communicates with Amazon through their SDK.  Your credentials are never sent to us.
   v-alert(:value='error' type="error") Got this error from AWS: #[pre {{error}}]  Are your credentials right?
   StatusPoller(
     v-if='show_poller'
@@ -131,6 +131,7 @@ export default {
             this.vpc,
             this.whitelist
           )
+          this.$hpx("hpxui.create", this.version)
           this.show_poller = true
         } catch (e) {
           this.error = e

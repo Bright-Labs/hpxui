@@ -1,5 +1,5 @@
 <template lang="pug">
-.status This is a client side script, using Amazon's SDK.  None of your information (particularily keys and passwords) are sent to us.
+.status This app communicates with Amazon through their SDK.  Your credentials are never sent to us.
   StatusPoller(:start_polling='true', initial_status="Please fill out the form to check on your stack.")
   v-form(v-model="valid")
     v-text-field(

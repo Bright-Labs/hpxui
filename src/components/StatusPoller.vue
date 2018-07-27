@@ -49,6 +49,7 @@ export default {
         this.next_update -= 1
         if (this.next_update < 1) {
           this.next_update = 30
+          this.$hpx("hpxui.checkstatus")
           try {
             ;[
               this.cloud_formation,
@@ -60,6 +61,11 @@ export default {
               this.sharedState.region,
               this.sharedState.prefix
             )
+            if (this.cloud_formation) {
+              this.$hpx(`hpxui.${this.cloud_formation.StackStatus}`)
+            } else {
+              this.$hpx("hpxui.NO_STACK")
+            }
           } catch (e) {
             this.aws_error = e
           }

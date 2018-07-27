@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "aws-sdk": "^2.280.1",
+    "hpx": "^1",
     "interval-promise": "^1.2.0",
     "ipify": "^2.0.0",
+    "uuidv4": "^1.0.1",
     "vee-validate": "^2.1.0-beta.6",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
